@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Events</title>
+    <style>
+        .button1 {
+            background-color: yellow;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer
+        }
+    </style>
+</head>
+<body>
+      <!-- <button class="button1" id="btn1" onclick="click_button()">Hover me</button> -->
+      <p>NAME: <input type="text" id="name_txt" /></p>
+      <button class="button1" id="btn1" onclick="">Say Hello</button>&nbsp;
+      <button class="button1" style="background-color: aqua;" id="btn2" onclick="">Show the time</button>
+      <hr>
+      <p id="result"></p>
+      <script>
+  
+          const result = document.getElementById('result')
+          const btn1 = document.getElementById('btn1')
+          const btn2 = document.getElementById('btn2')
+          const input_name = document.getElementById('name_txt')
+
+          function click_button() {
+            result.innerHTML += 'hello ' + input_name.value + '! <br />'
+            result.innerHTML += `hello ${input_name.value}! <br />`
+        }
+        btn1.addEventListener ('click' , () =>{
+            result.innerHTML += `hello ${input_name.value}! <br />` 
+        })
+
+        btn1.addEventListener('mouseover', ()=> {
+            btn1.style.backgroundColor = "green" 
+        })
+        btn1.addEventListener('mouseout' ,()=> {
+            btn1.style.backgroundColor = 'pink'
+
+        })
+        btn2.addEventListener('click', ()=>{
+            result.innerHTML += `THE eime is ${Date()} <br/>`
+        })
+        </script>
+  
+    
+</body>
+</html>
